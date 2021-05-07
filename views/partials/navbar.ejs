@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar</title>
+  <link rel="stylesheet" href="/css/hom.css">
+</head>
+<body>
+  <!-- <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/campgrounds">Yelp_Camp</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link" href="/campgrounds">Campgrounds</a>
+          <a class="nav-link" href="/campgrounds/new">New Campgrounds</a>
+        </div>
+      </div>
+        
+        <div class="navbar-nav ml-auto">
+          <% if(!currentUser){ %>
+            <a class="nav-link" href="/register">Sign Up</a>
+            <a class="nav-link" href="/login">Login</a>
+          <% } else { %>
+            <a class="nav-link" href="/logout">Logout</a>
+          <% } %> 
+        </div> 
+      </div>
+    </div>
+  </nav> -->
+
+
+
+
+  <header class="mb-auto">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" style="color: rgba(247, 243, 243, 0.918);" href="#">YelpCamp</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <ul class="navbar-nav justify-content-end nav-ul">
+              <a href="/" class="nav-item active">Home</a>
+                <a class="nav-item" href="/campgrounds">Campgrounds</a>
+                <% if(!currentUser) { %>
+                    <a class="nav-item" href="/login">Login</a>
+                    <a class="nav-item" href="/register">Register</a>
+                <% } else { %>
+                    <a class="nav-item" href="/logout">Logout</a>
+                <% } %> 
+                <a class="nav-item" href="/campgrounds/new">Crete Campground</a>
+                <a class="nav-item" href="#">Contact Us</a>
+                </ul>
+          </div>
+        </div>
+      </nav>
+</header>
+
+
+
+
+
+  <!-- <nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/campgrounds">Yelp Camp!!</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+        </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link" href="/campgrounds">Campgrounds</a>
+          <a class="nav-link" href="/campgrounds/new">New Campgrounds</a>
+        </div>
+
+          <div class="navbar-nav">
+            <% if(!currentUser){ %>
+              <a class="nav-link" href="/register">Sign Up</a>
+              <a class="nav-link" href="/login">Login</a>
+            <% } else { %>
+              <a class="nav-link" href="/logout">Logout</a>
+            <% } %> 
+          </div>
+
+      </div>
+
+
+
+    </div>
+  </nav> -->
+
+
+
+</body>
+</html>

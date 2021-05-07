@@ -1,0 +1,100 @@
+<% layout('layout/boilerplate') %> 
+<title>Edit Campground</title>
+</head>
+<body>
+
+    <div class="row bg-light mb-4 p-4">
+      <h1 class="text-center">Edit Campgrounds:</h1>
+      <div class="col-6 offset-3 ">
+        <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+
+          <div class="col-12">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" name="campground[title]" id="title" placeholder="Honey Camp" value="<%= campground.title %>" required>
+            <div class="invalid-feedback">
+              Please Enter a Title !!
+            </div>
+          </div>
+
+          <div class="col-12 mt-2">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" class="form-control" name="campground[location]" id="location" placeholder="Jordan, Amman" value="<%= campground.location %>" required>
+            <div class="invalid-feedback">
+              Please Enter a Location !!
+            </div>
+          </div>
+
+
+
+          <div class="mb-2">
+            <label class="form-label" for="price">Campground Price</label>
+            <div class="input-group">
+              <span  class="input-group-text" id="price-label">JOD</span>
+              <input type="text" class="form-control" name="campground[price]" id="price" placeholder="0.00"
+                     aria-label="price" aria-describedby="price-label" value="<%= campground.price %>" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                     <div class="invalid-feedback">
+                      Please Enter a Price !!
+                    </div>
+            </div>
+          </div>
+
+          <div class="mb-2 mt-2">
+            <label for="image" class="form-label">Images (Optional)</label>
+            <input type="file" class="form-control" id="image" name="image" multiple>
+          </div>
+
+          <div class="mt-2">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" name="campground[description]" id="description" rows="2" required><%= campground.description %></textarea>
+            <div class="invalid-feedback">
+              You must write some description here !!
+            </div>
+          </div>
+           
+          <div class="cotnainer">
+            <div class="row">
+              <div class="col">
+          <div class="mb-3">
+            <% campground.images.forEach(function(img , i) { %>
+              <img src="<%= img.thum %>" class="img-thumbnail"  alt="">
+              <div class="form-check-inline">
+                <input type="checkbox" name="deleteImages[]" value="<%= img.filename %> " id="image-<%= i %> ">
+              </div>
+              <label for="image-<%= i %> ">Delete?</label>
+            <% }) %> 
+          </div>
+        </div>
+        </div>
+        </div>
+
+            <button class="btn btn-info mt-4">Edit Now!!</button>       
+        </form>
+        <a href="/campgrounds"><button class="btn btn-outline-secondary mt-2">All campgrounds</button> </a>
+    
+      </div>
+    
+    </div>
+
+
+
+
+    <!-- <script>
+      ( function () {
+            'use strict'
+      
+            const forms = document.querySelectorAll('.validated-form')
+      
+        Array.from(forms)
+              .forEach(function (form) {
+                form.addEventListener('submit' , function (event) {
+                  if(!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                  }
+      
+                  form.classList.add('was-validated')
+                }, false)
+              })
+      })()
+      </script> -->
+

@@ -1,0 +1,71 @@
+<% layout('layout/boilerplate') %> 
+<title>New Campground</title>
+</head>
+<body>
+   
+
+  
+    <div class="row bg-light m-2 p-5">
+      <h1 class="text-center">New Campgrounds:</h1>
+      <div class="col-6 offset-3 ">
+        <form action="/campgrounds" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+
+          <div class="col-12">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" name="campground[title]" id="title" placeholder="Honey Camp" required>
+            <div class="invalid-feedback">
+              Please Enter a Title !!
+            </div>
+          </div>
+
+          <div class="col-12 mt-2">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" class="form-control" name="campground[location]" id="location" placeholder="Jordan, Amman" required>
+            <div class="invalid-feedback">
+              Please Enter a Location !!
+            </div>
+          </div>
+
+
+          <!-- <input type="file" name="image" id="" multiple> -->
+
+          <!-- <div class="col-12 mt-2">
+          </div> -->
+
+          <div class="mb-3">
+            <label class="form-label" for="price">Campground Price</label>
+            <div class="input-group">
+              <span  class="input-group-text" id="price-label">JOD</span>
+              <input type="text" class="form-control" name="campground[price]" id="price" placeholder="0.00"
+                     aria-label="price" aria-describedby="price-label" required >
+                     <div class="invalid-feedback">
+                      Please Enter a Price !!
+                    </div>
+            </div>
+          </div>
+
+          <div class="form-file mb-2 mt-2 custom-file">
+            <label for="image" class="form-label custom-file-label">Images (Optional)</label>
+            <input class="form-control" type="file" id="image" name="image" multiple>
+          </div>
+
+          <div class="mt-2">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" name="campground[description]" id="description" rows="2" required></textarea>
+            <div class="invalid-feedback">
+              You must write some description here !!
+            </div>
+          </div>
+           
+            <button class="btn btn-outline-success mt-4">Create Now!!</button>       
+        </form>
+        <a href="/campgrounds"><button class="btn btn-secondary mt-2">All campgrounds</button> </a>
+    
+      </div>
+    
+    </div>
+
+
+    <!-- oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" -->
+
+
